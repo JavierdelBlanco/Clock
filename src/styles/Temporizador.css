@@ -1,0 +1,50 @@
+.container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    flex-direction: column;
+}
+
+.marco {
+    height: 250px; 
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;  
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 200px; 
+    width: 400px;
+    background-color: white;  
+}
+
+.hora {
+    font-size: 90px;
+}
+
+.botones {
+    height: 30px;
+    width: 450px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+    width: 150px;
+}
+
+.suma-resta{
+    display: flex;
+    justify-content: center;
+}
+
+.contador {
+    width: 75px;
+}

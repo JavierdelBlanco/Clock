@@ -1,0 +1,22 @@
+.button-line{
+    height: 30px;
+    width: 450px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.counter{
+    display: flex;
+    justify-content: center;
+}
+
+.add-subtract{
+    width: 75px;
+}
+
+.normal-button{
+    width: 150px;
+}
+.change-button{
+    width: 225px;
+}

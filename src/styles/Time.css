@@ -1,0 +1,11 @@
+.time {
+    font-size: 90px;
+    color: green;
+    background-color: #003;
+}
+
+.alarmActive {
+    font-size: 90px;
+    color: darkred;
+    background-color: #003;
+}

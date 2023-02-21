@@ -1,0 +1,35 @@
+.container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    flex-direction: column;
+}
+
+.marco {
+    height: 250px; 
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;  
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 200px; 
+    width: 400px;
+    background-color: #003;
+    flex-direction: column;  
+}
+
+.mode{
+    color: green;
+}
+
+.modoAlarmActive {
+    color: darkred;
+}

@@ -1,0 +1,6 @@
+
+.alarma-container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: blueviolet;
+}
