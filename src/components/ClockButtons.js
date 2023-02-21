@@ -71,7 +71,9 @@ const ClockButtons = ({mode,hours,minutes,seconds,alarmActive,alarmRinging,handl
 
         const tiktakT = () => {
             const intT = setInterval( () => {
-                subtrackSecond();
+                if(hours !== 0 || minutes !== 0 || seconds !== 0){
+                    subtrackSecond();
+                } else setStartTimer(false)
             }, 1000);
             setIntervalTimer(intT);
             
