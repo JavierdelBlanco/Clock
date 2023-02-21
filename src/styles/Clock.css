@@ -1,13 +1,14 @@
-.container {
-    height: 500px;
+.band {
+    height: 500px; 
+    width: 490px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkgray;
-    flex-direction: column;
+    background-color: darkgreen;
 }
 
-.marco {
+.frame {
     height: 250px; 
     width: 450px;
     display: flex;

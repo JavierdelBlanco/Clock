@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import '../styles/ClockButtons.css';
 
-const ClockButtons = ({mode,alarmActive,alarmRinging,hours,minutes,seconds,handleModoIzquierdo,handleModoDerecho,setHours,setMinutes,setSeconds,setAlarmActive,setAlarmRinging}) => {
+const ClockButtons = ({mode,hours,minutes,seconds,alarmActive,alarmRinging,handleModoIzquierdo,handleModoDerecho,setHours,setMinutes,setSeconds,setAlarmActive,setAlarmRinging,setPauseAlarm}) => {
 
     const [startStopwatch,setStartStopwatch] = useState (false);
     const [intervalStopwatch,setIntervalStopwatch] = useState(0);
@@ -94,12 +94,20 @@ const ClockButtons = ({mode,alarmActive,alarmRinging,hours,minutes,seconds,handl
     
     const stop = () => {
         
-        const startMode = () => {
+        const stopMode = () => {
             setStart[mode-1](false);
             clearInterval(interval[mode-1]);
-        } 
+        }
         
-        return mode === 0 ? null : (mode === 3 ? setAlarmActive(false) : startMode());
+        const stopAlarm = () => {
+            if(alarmRinging){
+                setPauseAlarm(true); 
+                setAlarmActive(false);
+                setAlarmRinging(false);
+            }else setAlarmActive(false)
+        }
+        
+        return mode === 0 ? null : (mode === 3 ? stopAlarm() : stopMode());
     }
 
     const restart = () => {
@@ -114,17 +122,17 @@ const ClockButtons = ({mode,alarmActive,alarmRinging,hours,minutes,seconds,handl
     }
 
     useEffect(() => {
-        if(hours === 0 && minutes === 0 && seconds === 0 && mode !== 3){
+        if(hours === 0 && minutes === 0 && seconds === 0 && (mode === 1 || mode === 2)){
             clearInterval(interval[mode-1]);
             setStart[mode-1](false);
         }
-    },[seconds])
+    },[seconds]);
 
     return (
         <div className='botones'>
              <div className='button-line'>
-                <button className='change-button' onClick={handleModoIzquierdo}>⇤</button>
-                <button className='change-button' onClick={handleModoDerecho}>⇥</button>
+                <button className='change-button' onClick={alarmRinging ? null : handleModoIzquierdo}>⇤</button>
+                <button className='change-button' onClick={alarmRinging ? null :handleModoDerecho}>⇥</button>
             </div>
             <div className='button-line'>
                 <div className='counter'>
